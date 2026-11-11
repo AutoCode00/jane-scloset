@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Jane's Closet — squish, style, slay</title>
+<meta name="description" content="A squishy claymation dress-up game. Style your clay cutie, enter Miss Button's daily Look of the Day challenge, vote for your favourites and win the crown — every look saved on BOT Chain.">
+<meta property="og:title" content="Jane's Closet — squish, style, slay">
+<meta property="og:description" content="Dress up your clay cutie, enter today's Look of the Day, and win the crown. Saved on BOT Chain.">
+<meta name="theme-color" content="#FBF3E8">
+<link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body data-root="./" data-page="home">
+<main>
+  <!-- 1 · Hero -->
+  <section class="hero" aria-labelledby="heroTitle">
+    <div class="wrap hero-grid">
+      <div class="hero-copy">
+        <p class="kicker">Miss Button's clay fashion studio</p>
+        <h1 id="heroTitle">Squish, style, <span class="slay"></span></h1>
+        <p class="lead">Dress up your clay cutie, enter today's Look of the Day, and win the crown.</p>
+        <div class="hero-ctas">
+          <a class="clay-btn pink big" href="studio/">👗 Start styling</a>
+          <a class="clay-btn big" href="#today">See today's theme</a>
+        </div>
+      </div>
+      <div class="set" id="set" aria-label="A stop-motion clay set: Miss Button pushes a clothing rack while the cutie spins through outfits" role="img">
+        <div class="set-mirror"></div>
+        <span class="set-sparkle" style="left:12%;top:62%">✨</span>
+        <span class="set-sparkle" style="right:10%;top:10%">⭐</span>
+        <div class="set-cutie" id="heroCutie"></div>
+        <div class="set-rack" id="heroRack"></div>
+        <div class="set-button" id="heroButton"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 · Meet the studio -->
+  <section class="section" id="crew" aria-labelledby="crewTitle">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Meet the studio</p>
+        <h2 id="crewTitle">A tiny crew with big opinions</h2>
+        <p class="lead">Everyone here was squished by hand. Well — by code that pretends very hard to be hands.</p>
+      </div>
+      <div class="crew" id="crewGrid"></div>
+    </div>
+  </section>
+
+  <!-- 3 · Today's theme -->
+  <section class="section" id="today" aria-labelledby="todayTitle" style="background:rgba(201,167,235,.16)">
+    <div class="wrap theme-band">
+      <div class="char-box boil" id="todayButton"></div>
+      <div>
+        <p class="kicker">Look of the Day</p>
+        <h2 id="todayTitle">Today Miss Button wants…</h2>
+        <div class="theme-card" style="margin:18px 0 26px;max-width:520px">
+          <span class="chip">Theme of the day</span>
+          <p class="theme-name" id="themeName">…</p>
+          <div class="theme-meta">
+            <span class="chip" style="background:var(--cream)">⏳ next theme in <b class="countdown" id="countdown">--:--:--</b></span>
+            <span class="chip" style="background:var(--mint)">👗 <b id="entryCount">–</b> entries</span>
+          </div>
+        </div>
+        <div class="hero-ctas" style="margin-top:0">
+          <a class="clay-btn pink big" href="challenge/">Enter now</a>
+          <a class="clay-btn big" href="challenge/#vote">Vote on looks</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 4 · The wardrobe -->
+  <section class="section" id="wardrobe" aria-labelledby="wardrobeTitle">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">The wardrobe</p>
+        <h2 id="wardrobeTitle">A closet full of clay</h2>
+        <p class="lead">Every piece comes in six squishy colours. Mix, match, and stick stars on everything.</p>
+      </div>
+      <div class="shelf" id="shelf"></div>
+    </div>
+  </section>
+
+  <!-- 5 · Winners' wall -->
+  <section class="section" id="winners" aria-labelledby="winnersTitle" style="background:rgba(255,226,154,.22)">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Winners' wall</p>
+        <h2 id="winnersTitle">Crowned cuties 👑</h2>
+        <p class="lead">The most-voted look of each day — straight from BOT Chain.</p>
+      </div>
+      <div class="winners" id="winnersGrid"><div class="look-thumb is-loading" style="max-width:200px"></div></div>
+    </div>
+  </section>
+
+  <!-- 6 · How it works -->
+  <section class="section" id="how" aria-labelledby="howTitle">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">How it works</p>
+        <h2 id="howTitle">Three squishy steps</h2>
+      </div>
+      <div class="steps">
+        <div class="panel step-card"><div class="num">1</div><div class="icon">👗</div><h3>Style</h3><p>Pick hair, outfits, shoes, extras, stickers and a set. Hit <b>Save look</b> to keep it in your closet on BOT Chain.</p></div>
+        <div class="panel step-card"><div class="num">2</div><div class="icon">🎟️</div><h3>Enter</h3><p>Miss Button picks a new theme every day. Enter one saved look that fits — one entry per wallet per day.</p></div>
+        <div class="panel step-card"><div class="num">3</div><div class="icon">👑</div><h3>Vote &amp; win</h3><p>Vote for your favourite (not your own!). When the day ends, the top look gets a crown badge forever.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 7 · FAQ + CTA -->
+  <section class="section" id="faq" aria-labelledby="faqTitle" style="padding-top:0">
+    <div class="wrap">
+      <div class="section-head">
+        <p class="kicker">Questions</p>
+        <h2 id="faqTitle">Ask Miss Button</h2>
+      </div>
+      <div class="faq">
+        <details class="panel"><summary>Is it free?</summary><p>Yes! There's nothing to buy — no tokens, no payments. Saving, entering and voting are tiny BOT Chain transactions, so you only pay the network gas.</p></details>
+        <details class="panel"><summary>Do I need a wallet?</summary><p>Only to save, enter and vote. Dressing up and making photo cards work without one. When you're ready, connect MetaMask and we'll switch it to BOT Chain for you.</p></details>
+        <details class="panel"><summary>Can I vote for myself?</summary><p>Nope — the contract won't let you. You get one vote per day, for someone else's look.</p></details>
+        <details class="panel"><summary>What's saved on-chain?</summary><p>Just the outfit recipe — 32 tiny bytes saying which hair, clothes, colours and stickers you picked — plus a short look name. Your browser rebuilds the clay picture from that recipe.</p></details>
+        <details class="panel"><summary>When does the day end?</summary><p>At midnight UTC. After that anyone can crown the winner — the site does it automatically when someone opens the results.</p></details>
+      </div>
+      <div class="cta-final">
+        <h2>Your next look is waiting in the closet.</h2>
+        <a class="clay-btn pink big" href="studio/">👗 Start styling</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.5/ethers.umd.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
+<script type="module" src="assets/js/home.js"></script>
+</body>
+</html>

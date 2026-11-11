@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My closet — Jane's Closet</title>
+<meta name="description" content="Your saved clay looks, crowns and challenge history on Jane's Closet.">
+<meta name="theme-color" content="#FBF3E8">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-root="../" data-page="closet">
+<main class="wrap">
+  <div class="closet-head">
+    <div>
+      <p class="kicker">My closet</p>
+      <h1 style="font-size:clamp(36px,5vw,58px)">Your saved looks</h1>
+    </div>
+    <div class="closet-stats" id="closetStats"></div>
+  </div>
+  <section id="closet" aria-live="polite"><div class="look-thumb is-loading" style="max-width:200px"></div></section>
+  <section style="margin-top:56px" aria-labelledby="histTitle">
+    <h2 id="histTitle" style="font-size:30px">Challenge history</h2>
+    <p class="muted">The last 14 days you entered.</p>
+    <div class="history" id="history"></div>
+  </section>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.5/ethers.umd.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
+<script type="module" src="../assets/js/closet.js"></script>
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Studio — Jane's Closet</title>
+<meta name="description" content="Dress up your clay cutie: hair, tops, dresses, shoes, accessories, stickers and clay sets. Save your look on BOT Chain.">
+<meta name="theme-color" content="#FBF3E8">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-root="../" data-page="studio">
+<main class="wrap">
+  <h1 class="sr-only">Dress-up studio</h1>
+  <div class="studio">
+    <!-- centre: the cutie on her pedestal -->
+    <section class="stage" aria-label="Your cutie">
+      <div class="stage-frame is-loading" id="frame">
+        <canvas id="stage" width="800" height="1000" role="img" aria-label="Your clay cutie wearing the current outfit"></canvas>
+        <div class="runner" id="runner" aria-hidden="true"></div>
+      </div>
+      <div class="peek boil" id="peek" aria-hidden="true"></div>
+      <div class="speech" id="speech" aria-live="polite"></div>
+    </section>
+
+    <!-- left: wardrobe -->
+    <section class="panel wardrobe" aria-label="Wardrobe">
+      <div class="tabs" role="tablist" id="tabs"></div>
+      <div class="items" id="items" role="tabpanel"></div>
+      <p class="sticker-hint" id="hint" hidden>Tip: drag stickers on your cutie to move them.</p>
+    </section>
+
+    <!-- right: colours, actions, save -->
+    <aside class="side">
+      <div class="panel" id="colourPanel">
+        <h3 id="colourTitle">Colour</h3>
+        <div class="swatches" id="swatches"></div>
+      </div>
+      <div class="panel">
+        <h3>Your cutie</h3>
+        <div class="swatches" id="skins" aria-label="Skin tone"></div>
+        <div class="btn-row" id="faces" style="margin-top:12px"></div>
+      </div>
+      <div class="panel">
+        <div class="btn-row">
+          <button type="button" class="clay-btn small butter" id="surprise">🎲 Surprise me</button>
+          <button type="button" class="clay-btn small" id="reset">↺ Reset</button>
+          <button type="button" class="clay-btn small blue" id="photo">📸 Photo</button>
+        </div>
+      </div>
+      <div class="panel" id="savePanel">
+        <h3><label for="lookName">Name your look</label></h3>
+        <input class="name-field" id="lookName" maxlength="20" placeholder="e.g. Picnic princess" autocomplete="off">
+        <p class="field-note" id="nameNote">Up to 20 characters. Only the outfit recipe + name go on-chain.</p>
+        <button type="button" class="clay-btn pink" id="save" style="width:100%;margin-top:6px">💾 Save look</button>
+        <div id="saved" hidden style="margin-top:14px"></div>
+      </div>
+      <div class="panel mini-theme">
+        <span class="chip" style="color:var(--cocoa)">Today's theme</span>
+        <b id="theme">…</b>
+        <a class="clay-btn small" href="../challenge/">See the challenge →</a>
+      </div>
+    </aside>
+  </div>
+  <button type="button" class="clay-btn pink float-save" id="floatSave">💾 Save</button>
+</main>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.5/ethers.umd.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
+<script type="module" src="../assets/js/studio.js"></script>
+</body>
+</html>

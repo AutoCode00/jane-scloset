@@ -1,0 +1,6 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    { "name": "janes-closet", "runtimeExecutable": "node", "runtimeArgs": ["tools/serve.mjs", "4624"], "port": 4624 }
+  ]
+}

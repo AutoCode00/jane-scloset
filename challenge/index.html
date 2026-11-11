@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Look of the Day — Jane's Closet</title>
+<meta name="description" content="Miss Button's daily Look of the Day challenge: enter a saved look, vote for your favourite, and see who wins the crown.">
+<meta name="theme-color" content="#FBF3E8">
+<link rel="icon" href="../assets/img/favicon.svg" type="image/svg+xml">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../assets/css/style.css">
+</head>
+<body data-root="../" data-page="challenge">
+<main class="wrap">
+  <section class="challenge-head" aria-labelledby="chTitle">
+    <div class="char-box boil" id="host"></div>
+    <div>
+      <p class="kicker">Look of the Day · <span id="dayDate"></span></p>
+      <h1 id="chTitle" style="font-size:clamp(34px,5vw,58px)">“<span id="theme">…</span>”</h1>
+      <div class="theme-meta" style="justify-content:flex-start">
+        <span class="chip" style="background:var(--cream)">⏳ ends in <b class="countdown" id="countdown">--:--:--</b></span>
+        <span class="chip" style="background:var(--mint)">👗 <b id="entryCount">–</b> entries</span>
+        <span class="chip" style="background:var(--pink)">🗳️ <b id="voteCount">–</b> votes</span>
+      </div>
+    </div>
+  </section>
+
+  <div class="panel status-card" id="status" aria-live="polite"></div>
+
+  <div class="ch-tabs" role="tablist" id="vote">
+    <button type="button" class="clay-btn small" role="tab" data-view="duel" aria-selected="true">⚔️ Two at a time</button>
+    <button type="button" class="clay-btn small" role="tab" data-view="grid" aria-selected="false">🧺 All entries</button>
+    <button type="button" class="clay-btn small" role="tab" data-view="results" aria-selected="false">👑 Results</button>
+  </div>
+  <section id="view" style="min-height:420px" aria-live="polite"></section>
+</main>
+
+<dialog id="picker" class="panel" style="border:0;max-width:760px;width:calc(100% - 32px)">
+  <h3>Pick a look to enter</h3>
+  <p class="muted" style="font-size:15px">One entry per wallet per day. Choose the look that fits “<span id="pickTheme"></span>” best.</p>
+  <div class="grid" id="pickGrid" style="grid-template-columns:repeat(auto-fill,minmax(140px,1fr))"></div>
+  <div class="btn-row" style="margin-top:16px"><button type="button" class="clay-btn small" id="pickClose">Cancel</button><a class="clay-btn small lilac" href="../studio/">Style a new look</a></div>
+</dialog>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/6.13.5/ethers.umd.min.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js" crossorigin="anonymous"></script>
+<script type="module" src="../assets/js/challenge.js"></script>
+</body>
+</html>
